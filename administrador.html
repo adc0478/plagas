@@ -94,22 +94,22 @@
                   </h4>
                 </div>
                 <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                  <form action="" method="POST" class="form-inline form3" role="form">
+                  <form id='subFile' action="" method="POST" class="form-inline form3" role="form" enctype="multipart/form-data">
                   
                     <div class="form-group">
                       <select name="" id="user2">
                         
                       </select>
-                      <input type="text" class="form-control" placeholder="Fecha desde">
-                      <select name="" id="tipo">
+                      <input type="text" id='Fdesde2' class="form-control" placeholder="Fecha desde">
+                      <select name="" id="tipo2">
                         <option value="mensual">mensual</option>
                         <option value="diario">diario</option>
                       </select>
                     </div>
                     <div class="form-group">
-                      <input type="file" id="archivo">
+                      <input type="file" id="archivo" name="archivo">
                     </div>
-                    <a href="#" class="btn btn-primary">Cargar</a>
+                    <a href="#" class="btn btn-primary" id="bto_subir">Cargar</a>
                     
                   </form>
                 </div>

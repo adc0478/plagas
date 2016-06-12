@@ -12,7 +12,7 @@
          $valu = $deco[0][nombre];
          if ($deco[0][nombre]=="") {
              insertar ($colum, $valores, $base, $tabla, $usuario, $pass, $servidor);
-             mkdir($_POST['dato'],0777);
+             mkdir('../archivos/' . $_POST['dato'],0777);
              echo "creado";
          }else{
              echo "El usuario ya existe";

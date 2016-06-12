@@ -68,6 +68,32 @@ function nuevo(){
 }
 
 
+/////////////////Subir archivo ////////////////////////////////////////////
+function subir (){
+	var formdata = new FormData (document.getElementById('subFile'));
+	formdata.append ('tipo', document.getElementById('tipo2').value);
+	formdata.append ('user2', document.getElementById('user2').value);
+	formdata.append ('Fdesde', document.getElementById('Fdesde2').value);
+
+	$.ajax({
+			url: '../plagas/php/subir.php',
+			type: 'post',
+			data: formdata,
+		    processData: false,  // tell jQuery not to process the data
+            contentType: false,   // tell jQuery not to set contentType
+			success: function (data) {
+				if (data=="correcto") {
+                    //limpiar campos
+                    document.getElementById('Fdesde2').value = "";
+                    //Mensaje satisfactorio
+                    alert ('El archivo se cargo correctamente');
+
+				} else {
+					alert ("El error obtenido es: " + data);
+				}
+			}
+		});
+}
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -76,6 +102,7 @@ function inicio(){
 	this.listar ();
 	document.getElementById ('bto_blanc').onclick = limpiar_clave;
 	document.getElementById('btoNuevo').onclick = nuevo;
+	document.getElementById('bto_subir').onclick = subir;
 	
 }
 
